@@ -1,0 +1,12 @@
+decimal_scaling_normalization <- function(x) {
+  max_abs <- max(abs(x))
+  decimal_shift <- nchar(as.integer(max_abs))
+  return (x / 10^decimal_shift)
+}
+
+# Sample data
+sample_data <- c(123, 456, 789, 101112)
+
+# Applying Decimal Scaling Normalization
+normalized_data <- decimal_scaling_normalization(sample_data)
+print(normalized_data)
