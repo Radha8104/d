@@ -1,0 +1,7 @@
+data <- iris[c(51, 56, 84, 60, 59, 70, 63, 66, 50, 51, 56, 84, 60, 59, 70, 63, 66, 50), -5]
+dist_matrix <- dist(data, method = "euclidean")
+hclust_result <- hclust(dist_matrix, method = "ward.D2")
+plot(hclust_result)
+k <- 3
+clusters <- cutree(hclust_result, k)
+print(clusters)
